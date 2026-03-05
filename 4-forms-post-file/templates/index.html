@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Index Page{% endblock %}
+
+
+{% block content %}
+
+
+	<h1>index</h1>
+
+	<form method="POST" action="{{ url_for('index') }}"> <!--- action is URL we are sending POST request to --->
+		<input type="text" name="username" placeholder="Username"> <br><!--- "name" is the key for the key value pair that is going to be returned --->
+		<input type="password" name="password" placeholder="Password"><br>
+		<input type="submit" value="Login"><br> <!--- "value" here is just what the text says on the submit button --->
+	</form>
+
+	<h1>file upload</h1>
+
+	<form method="POST" action="{{ url_for('file_upload') }}" enctype="multipart/form-data"> <!--- need to specify encoding data bc we are passing files --->
+		<input type="file" name="file" accept="text/plain" required="required"> <!--- need to specify file type we are expecting (content type) --->
+		<input type="submit" value="upload the file">
+	</form>
+
+{% endblock %}
