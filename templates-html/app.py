@@ -11,5 +11,10 @@ def index():
     mylist = [1, 2, 3, 4, 5]
     return render_template('index.html', myvalue=myvalue, myresult=myresult, random_value='ipsum', mylist=mylist) # values will be passed on to the html template
 
+
+@app.route('/other')
+def other():
+    return render_template('other.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
