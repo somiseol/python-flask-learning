@@ -1,12 +1,29 @@
-<DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} <!--- inheriting from parent --->
+{% block title %}Index Page{% endblock %}
 
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>>
-</head>
 
-<body>
-</body>
+{% block content %} <!--- inherited functionality from parent (in this case, base.html) --->
+	<!--- values passed from ../app.index()--->
+	<p>{{ myvalue }}</p>
+	<p>{{ myresult }}</p>
+	<p>{{ random_value }}</p>
 
-</html>
+
+	<!--- lists --->
+	<p>{{ mylist }}</p>
+	<ul>
+		{% for item in mylist %}
+			{% if item == 3 %}
+				<li style="color: red">{{ item }}</li>
+			{% else %}
+				<li>{{ item }}</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<ul>
+		{% for item in mylist %}
+		<li {% if item == 4 %}style="color: blue"{% endif %}>{{ item }}</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}
