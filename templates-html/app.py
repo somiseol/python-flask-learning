@@ -14,7 +14,16 @@ def index():
 
 @app.route('/other')
 def other():
-    return render_template('other.html')
+    some_text = 'dolor'
+    return render_template('other.html', some_text=some_text)
+
+@app.template_filter('reverse_string')
+def reverse_string(s):
+    return s[::-1]
+
+@app.template_filter('repeat')
+def repeat(s, times=2):
+    return s * times
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

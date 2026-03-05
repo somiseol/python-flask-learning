@@ -6,4 +6,15 @@
 
 	<h1>Other</h1>
 
+	<!--- filter (you need to pipe the text throught the filter --->
+	<p>{{ some_text|upper }}</p>
+	<p>{{ some_text|lower}}</p>
+	<p>{{ some_text|title}}</p>
+	<p>{{ some_text|replace('l', 'L')}}</p>
+
+	<!--- custom filter (see ../app.py.reverse_string()) --->
+	<p>{{ some_text|reverse_string}}</p>
+	<p>{{ some_text|repeat}}</p>
+	<p>{{ some_text|repeat(5)}}</p>
+
 {% endblock %}
