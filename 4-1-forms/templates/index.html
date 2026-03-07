@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}index{% endblock %}
+
+{% block content %}
+	<!--- action is the target url we're sending the POST request to --->
+	<form method="POST" action="{{ url_for('index') }}">
+		<input type="text" name="username" placeholder="Username"><br>
+		<input type="password" name="password" placeholder="Password"><br>
+		<input type="submit" value="Login">
+		<!--- "name" is the key to the key-value pair in the backend--->
+		<!--- "placeholder" is the text that shows up as place holder in the text input field --->
+	</form>
+{% endblock %}
